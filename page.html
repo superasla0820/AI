@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳平 (Chen Pin) - 個人名片</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 簡單的 CSS 樣式，確保按鈕和提示文字在視覺上是可見的 */
+        #contact-btn {
+            background-color: var(--accent-color); /* 使用藍色 */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        #contact-btn:hover {
+            background-color: #2980b9; /* 懸停時顏色變深 */
+        }
+
+        #message-display {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e8f0fe; /* 淺藍色背景，用於區分提示文字 */
+            color: var(--text-color);
+            border: 1px solid #c5dcfc;
+            border-radius: 5px;
+            font-weight: 700;
+            display: none; /* 預設隱藏提示文字 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container"> 
+        
+        <header>
+            <h1>陳平 (Chen Pin)</h1>
+            <p>前端工程師 (Front-end Developer)</p>
+        </header>
+
+        <main>
+            <img src="大頭照.png" alt="陳平的頭像">
+
+            <section>
+                <h2>自我介紹</h2>
+                <p>我是陳平，熱愛設計與實踐兼具美觀與效能的網站。樂觀、樂於學習並樂於與團隊合作。</p>
+            </section>
+        </main>
+        
+        <div style="text-align: center; padding: 0 40px 30px;">
+            <button id="contact-btn">點擊顯示訊息</button>
+            <p id="message-display">謝謝瀏覽我的名片！</p>
+        </div>
+        
+        <footer>
+            <section>
+                <h2>聯絡資訊</h2>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:chen.pin@example.com">chen.pin@example.com</a></li>
+                    <li><strong>電話:</strong> <a href="tel:+886920575788">+886-920-575-788</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>社群連結</h2>
+                <ul>
+                    <li><a href="https://instagram.com/chenpin" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/in/chenpin" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com/chenpin" target="_blank">GitHub</a></li>
+                </ul>
+            </section>
+        </footer>
+
+    </div> 
+    
+    <script>
+        // 1. 獲取按鈕和顯示區域的元素
+        const button = document.getElementById('contact-btn');
+        const messageDisplay = document.getElementById('message-display');
+
+        // 2. 定義按鈕點擊時要執行的函數
+        function showMessage() {
+            // 讓提示文字顯示出來 (將 display: none 移除)
+            messageDisplay.style.display = 'block';
+
+            // 可選：設定幾秒後自動隱藏
+            setTimeout(() => {
+                messageDisplay.style.display = 'none';
+            }, 3000); // 3000 毫秒 (3 秒) 後隱藏
+        }
+
+        // 3. 監聽按鈕的點擊事件
+        button.addEventListener('click', showMessage);
+    </script>
+
+</body>
+</html>

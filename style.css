@@ -1,0 +1,181 @@
+/* 引入一個專業且易讀的中文字體，例如 Google Fonts 的 Noto Sans TC */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap');
+
+:root {
+    /* 定義顏色變數 */
+    --primary-color: #34495e; /* 深藍/灰藍 (專業主色) */
+    --secondary-color: #2c3e50; /* 更深的顏色 (背景/重點) */
+    --accent-color: #3498db; /* 亮藍色 (連結/強調) */
+    --text-color: #333;
+    --light-bg: #f5f7fa; /* 輕微的背景色 */
+    --white-bg: #ffffff;
+    --border-color: #ecf0f1; /* 柔和的邊框 */
+}
+
+/* 基礎設定 */
+body {
+    font-family: 'Noto Sans TC', 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* 讓整個名片居中 */
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* 容器樣式 - 模擬名片/卡片效果 */
+.card-container {
+    width: 100%;
+    max-width: 768px; /* 限制最大寬度 */
+    background-color: var(--white-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 柔和的陰影 */
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* 將所有內容包裹在一個新的 div 中以便應用卡片樣式 (可選，但推薦) */
+/* 由於您只提供了 HTML 結構，我們直接對 body 的子元素進行樣式設定 */
+
+header, main, footer section {
+    padding: 30px 40px;
+}
+
+/* 標頭 (Header) */
+header {
+    background-color: var(--primary-color);
+    color: var(--white-bg);
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+header h1 {
+    margin: 0 0 5px;
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* 主要內容 (Main) */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+
+/* 頭像 (Image) */
+main img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* 圓形頭像 */
+    object-fit: cover;
+    border: 5px solid var(--border-color); /* 輕微的邊框 */
+    margin-bottom: 25px;
+}
+
+/* 自我介紹 (Section) */
+main section {
+    padding: 0;
+    max-width: 600px;
+    text-align: left; /* 讓內文左對齊更易讀 */
+}
+
+main h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* 頁腳 (Footer) */
+footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* 應對小螢幕 */
+    background-color: var(--secondary-color);
+    color: var(--white-bg);
+    padding: 20px 40px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+footer section {
+    padding: 10px 20px;
+    min-width: 250px;
+}
+
+footer h2 {
+    color: var(--accent-color);
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: none;
+    font-weight: 400;
+}
+
+/* 清單與連結 */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: var(--light-bg);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--accent-color); /* 連結懸停效果 */
+}
+
+/* 聯絡資訊的 strong 標籤 */
+footer strong {
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+
+/* 響應式設計：小螢幕調整 */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header, main, footer section {
+        padding: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer section {
+        text-align: center;
+        min-width: auto;
+        width: 100%;
+    }
+}
